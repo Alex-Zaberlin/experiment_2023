@@ -1,0 +1,25 @@
+{{ block title }}Survey{{ endblock }}
+{{ block content }}
+
+    <p>
+        Please answer the following questions.
+    </p>
+
+    {{ formfields }}
+
+
+{{ if player.id_in_group == 1 }}
+        <p>
+            Вы набрали {{ player.test_score }} баллов за тест.
+        </p>
+    {{ else }}
+        <p>
+            Второй игрок закончил писать тест.
+        </p>
+
+
+    {{ endif }}
+
+    {{ next_button }}
+
+{{ endblock }}
