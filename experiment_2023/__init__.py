@@ -7,7 +7,7 @@ A real-effort trust game
 
 class C(BaseConstants):
     MULTIPLIER = 3
-    INSTRUCTIONS_TEMPLATE = 'trust_simple/instructions.html'
+    INSTRUCTIONS_TEMPLATE = 'instructions.html'
     NAME_IN_URL = 'experiment_2023'
     PLAYERS_PER_GROUP = 2
     NUM_ROUNDS = 1
