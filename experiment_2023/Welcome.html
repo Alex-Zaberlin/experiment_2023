@@ -1,0 +1,78 @@
+{{ block title }}Добро пожаловать!{{ endblock }}
+{{ block content }}
+
+    <p>
+        Добро пожаловать!
+        Спасибо, что согласились принять участие в эксперименте!
+
+        Участники эксперимента будут анонимно разделены на пары по два человека с ролями Игрока 1 и Игрока 2.
+
+        Эксперимент состоит из двух частей: тест и игра в доверие. Перед каждой из частей игроки получат инструкции, соответствующие их типу (Игрок 1 или Игрок 2).
+    </p>
+
+    {{ if player.id_in_group == 1 }}
+        <p>
+            <b> Вы Игрок 1. </b> В течение следующих 15 минут Вам предстоит решать тест из 50 заданий.
+            Максимально можно набрать 50 баллов за тест. За неверные ответы баллы не снимаются.
+
+            Баллы, заработанные Вами на тесте, становятся Вашим стартовым балансом для игры в доверие. От них зависит Ваш выигрыш.
+
+            Вы сможете оставить любую часть стартовой суммы себе или отправить Игроку 2. Игроку 2 не дали возможности решать тест и заработать деньги.
+            Игрок 2 видел пример заданий.
+
+            Деньги, отправленные Игроку 2, утраиваются. Далее Игрок 2 решает, сколько из утроенных средств отправить обратно Вам.
+
+            Перед игрой в доверие Вы получите подробные инструкции ещё раз.
+
+            Ниже Вы можете видеть пример заданий, которые Вам предстоит решать на тесте.
+            Когда Вы перейдёте на следующую страницу, таймер на тест автоматически запустится.
+
+
+                <p>
+        Сколько единиц в этой матрице? <br>
+        &nbsp <br>
+        0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1<br>
+        0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0<br>
+        0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1<br>
+        1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0<br>
+        1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1<br>
+        1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1<br>
+        1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1<br>
+        1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0<br>
+        0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0<br>
+        1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 0 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1 &nbsp&nbsp&nbsp 1<br>
+
+    </p>
+        </p>
+    {{ else }}
+        <p>
+            <b> Вы Игрок 2. </b> В течение следующих 15 минут Игрок 1 из Вашей группы будет решать тест.
+            Число заработанных им баллов -- его стартовый баланс для игры в доверие.
+            Вы решать тест не будете, поэтому Ваш стартовый баланс равен нулю.
+
+            Игрок 1 может оставить любую часть стартовой суммы себе или отправить Вам.
+            Деньги, отправленные Вам Игроком 1, будут утроены. Далее Вы решаете, сколько из утроенных средств отправить обратно Игроку 1.
+
+            На следующей странице Вам будет доступен пример заданий, которые решает Игрок 1.
+
+            Перед игрой в доверие Вы получите подробные инструкции ещё раз.
+        </p>
+
+    {{ endif }}
+
+
+    {{ if group.treatment == "T" }}
+        <p>
+            <b> Игрок 2 будет знать, сколько баллов набрал в тесте Игрок 1. </b>
+        </p>
+    {{ else }}
+        <p>
+            <b> Игрок 2 НЕ будет знать, сколько баллов набрал в тесте Игрок 1. </b>
+        </p>
+
+    {{ endif }}
+
+
+    {{ next_button }}
+
+{{ endblock }}

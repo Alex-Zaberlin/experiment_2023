@@ -1,0 +1,14 @@
+{{ block title }}Ожидания{{ endblock }}
+{{ block content }}
+
+    {{ include C.INSTRUCTIONS_TEMPLATE }}
+
+    <p>
+        Игрок 1 отправил Вам {{ group.sent_amount }} (баллов). Всего Игрок 1 получил {{ group.endowment }} (баллов) за тест.
+    </p>
+
+    {{ formfields }}
+
+    {{ next_button }}
+
+{{ endblock }}

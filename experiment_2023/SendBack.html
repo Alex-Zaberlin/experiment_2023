@@ -1,0 +1,27 @@
+{{ block title }}Игра в доверие: Ваш выбор{{ endblock }}
+{{ block content }}
+
+    {{ include C.INSTRUCTIONS_TEMPLATE }}
+
+    <p>
+        Вы Игрок 2. Игрок 1 отправил Вам {{ group.sent_amount }} (баллов), и Вы получили {{ tripled_amount }} (баллов).
+    </p>
+
+    {{ if group.treatment == "T" }}
+        <p>
+            Всего Игрок 1 получил {{ group.endowment }} (баллов) за тест.
+        </p>
+    {{ else }}
+        <p>
+
+        </p>
+
+    {{ endif }}
+
+
+
+    {{ formfields }}
+
+    {{ next_button }}
+
+{{ endblock }}
