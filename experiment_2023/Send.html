@@ -1,0 +1,14 @@
+{{ block title }}Игра в доверие: Ваш выбор{{ endblock }}
+{{ block content }}
+
+    {{ include C.INSTRUCTIONS_TEMPLATE }}
+
+    <p>
+    <b> Вы Игрок 1 </b> . Вы набрали {{group.endowment}} (баллов) в тесте. Ваш стартовый баланс равен {{group.endowment}} (баллов).
+    </p>
+
+    {{ formfields }}
+
+    {{ next_button }}
+
+{{ endblock }}
