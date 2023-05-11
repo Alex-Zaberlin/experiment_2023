@@ -1602,7 +1602,7 @@ class Welcome(Page):
 
 
 class Test(Page):
-    timeout_seconds = 60*1 #60*1 #60*10
+    timeout_seconds = 60*6 #60*1 #60*10
     form_model = 'player'
     # form_fields = ['task1', 'task2', 'task3', 'task4', 'task5', 'task6', 'task7', 'task8',
     #                'task9', 'task10', 'task11', 'task12', 'task13', 'task14', 'task15', 'task16',
