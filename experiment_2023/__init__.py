@@ -36,7 +36,7 @@ class Group(BaseGroup):
     sent_amount = models.CurrencyField(
         min=cu(0),
         doc="""Amount sent by P1""",
-        label="Сколько Вы хотите отправить Игроку 2?",
+        label="Сколько баллов Вы хотите отправить Игроку 2? (целое неотрицательное число)",
     )
 
 
@@ -44,13 +44,13 @@ class Group(BaseGroup):
     sent_back_amount = models.CurrencyField(
         min=cu(0),
         doc="""Amount sent back by P2""",
-        label="Сколько Вы хотите отправить обратно Игроку 1?"
+        label="Сколько баллов Вы хотите отправить обратно Игроку 1? (целое неотрицательное число)"
     )
 
     expectations_player1 = models.CurrencyField(
         min=cu(0),
         doc="""Expected sent back amount""",
-        label="Сколько вы ожидаете получить назад?"
+        label="Сколько баллов Вы ожидаете получить назад? (целое неотрицательное число)"
     )
 
 
@@ -60,9 +60,9 @@ class Player(BasePlayer):
 
     test_score = models.IntegerField(initial = 0)
 
-    expectations_p1_player2 = models.IntegerField(label='Как Вы думаете, сколько баллов набрал за тест Игрок 1?', min=0, max=30)
+    expectations_p1_player2 = models.IntegerField(label='Как Вы думаете, сколько баллов набрал за тест Игрок 1? (целое неотрицательное число)', min=0, max=30)
 
-    expectations_p2_player2 = models.IntegerField(label='Как Вы думаете, сколько баллов Вы набрали бы за тест, если бы писали его?', min=0,
+    expectations_p2_player2 = models.IntegerField(label='Как Вы думаете, сколько баллов Вы набрали бы за тест, если бы писали его? (целое неотрицательное число)', min=0,
                                                   max=30)
 
     age = models.IntegerField(label='Сколько Вам лет?', min=13, max=125)
